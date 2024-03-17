@@ -6,7 +6,7 @@ import streamlit as st
 
 api_service_name = "youtube"
 api_version = "v3"
-youtube = googleapiclient.discovery.build(api_service_name, api_version, developerKey="AIzaSyCP_Q3U2-ooNcFM2lFCj367gigGmej1HM0")
+youtube = googleapiclient.discovery.build(api_service_name, api_version, developerKey=google_api_key)
 
 #Get Channel Data
 def get_channel_data(ch_id):
@@ -136,7 +136,7 @@ def get_playlist_data(c_id):
 
 #Inserting data into MongoDB
 #Create Connection:
-conn=pymongo.MongoClient("mongodb://Srivaishnavi:guvi2024@ac-9gjuw97-shard-00-00.yumx3ub.mongodb.net:27017,ac-9gjuw97-shard-00-01.yumx3ub.mongodb.net:27017,ac-9gjuw97-shard-00-02.yumx3ub.mongodb.net:27017/?ssl=true&replicaSet=atlas-rl70ym-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0")
+conn=pymongo.MongoClient("mongodb://Srivaish:<password>@ac-9gjuw97-shard-00-00.yumx3ub.mongodb.net:27017,ac-9gjuw97-shard-00-01.yumx3ub.mongodb.net:27017,ac-9gjuw97-shard-00-02.yumx3ub.mongodb.net:27017/?ssl=true&replicaSet=atlas-rl70ym-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0")
 
 #Create Database
 Youtube_DB=conn['Youtube_Database']
